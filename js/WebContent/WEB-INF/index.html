@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>window用法</title>
+</head>
+<body>
+	<table>
+		<thead>
+			<th>变量</th>
+			<th>函数</th>
+		</thead>
+		<tbody>
+			<tr>
+				<td></td>
+				<td></td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/window_var_fun.js"></script>
+<script type="text/javascript">
+	//全局对象用法
+	{
+		$("tbody td:first").html(scope1.a_var);
+		$("tbody td:nth-child(2)").html(scope1.a_fun());		
+	}
+
+	{
+		
+		//数据类型和转换
+		/**
+		==值判断，不同类型的先转换再判断；
+		===值和类型判断
+		
+		typeof用法
+		typeof window // "object"
+		typeof {} // "object"
+		typeof [] // "object"
+		typeof null // "object"
+		
+		typeof 123 // "number"
+		typeof '123' // "string"
+		typeof false // "boolean"
+		typeof function(){} //funciton
+		(null为object),undefined为“undefined类型”
+		
+		
+		
+		*/
+		if(3=='3')
+			alert("整数和字符串可以相互转换");
+		if("number"==typeof 3)
+			alert("3是数值类型");
+		//对象序列化{sex:"",no:"110",hobby:"ball"}[保留字 空格 中划线要用双引号括住]	
+		var obj_json={sex:"",no:"110",hobby:"ball"};
+		var str_json=JSON.stringify(obj_json)
+		console.log(str_json);
+		console.log(JSON.parse(str_json));
+		//无返回值的函数返回undefined
+	}	
+
+	{
+		//日期
+		var d=new Date();
+		alert(d.getDate());
+	}
+
+
+	
+	
+</script>
+</html>
